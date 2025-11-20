@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tulip Holding s.r.o. | Asset Management & Investment in tschechischen Immobilien</title>
+
+    <meta name="description" content="Tulip Holding s.r.o. – lokaler Asset Manager und Co-Investor für gewerbliche Immobilien in der Tschechischen Republik. Mietoptimierung, Leasing, Strukturierung und Wertschöpfung für institutionelle Eigentümer.">
+
+
+
+    <!-- Google Fonts: Inter for a clean, institutional look -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+
+
+    <style>
+
+        /* --- CSS VARIABLES & RESET --- */
+
+        :root {
+
+            /* Brand Colors – adjusted for Tulip (gold + deep blue/charcoal) */
+
+            --color-accent: #f4b841;          /* Warm gold accent */
+
+            --color-accent-dim: #ffe6b3;
+
+            --color-accent-hover: #e0a837;
+
+            --color-dark: #141820;           /* Deep charcoal / blue */
+
+            --color-dark-secondary: #212633;
+
+            --color-light: #ffffff;
+
+            --color-grey-bg: #f3f4f7;
+
+            --color-text: #23272f;
+
+            --color-text-light: #6b7280;
+
+
+
+            /* Layout */
+
+            --container-width: 1200px;
+
+            --header-height: 80px;
+
+
+
+            /* Transitions */
+
+            --transition: all 0.3s ease;
+
+        }
+
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            color: var(--color-text);
+
+            line-height: 1.6;
+
+            background-color: var(--color-light);
+
+            overflow-x: hidden;
+
+        }
+
+
+
+        h1, h2, h3, h4 {
+
+            color: var(--color-dark);
+
+            line-height: 1.2;
+
+            font-weight: 800;
+
+            letter-spacing: -0.02em;
+
+        }
+
+
+
+        h2 {
+
+            font-size: 2.4rem;
+
+            margin-bottom: 1.5rem;
+
+        }
+
+
+
+        p {
+
+            margin-bottom: 1rem;
+
+            font-size: 1.02rem;
+
+        }
+
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+            cursor: pointer;
+
+        }
+
+
+
+        img {
+
+            max-width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: cover;
+
+        }
+
+
+
+        /* --- UTILITIES --- */
+
+        .container {
+
+            width: 90%;
+
+            max-width: var(--container-width);
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background-color: var(--color-accent);
+
+            color: var(--color-dark);
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.06em;
+
+            border: 2px solid var(--color-accent);
+
+            transition: var(--transition);
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        .btn:hover {
+
+            background-color: transparent;
+
+            color: var(--color-accent);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        .btn-outline-dark {
+
+            background-color: transparent;
+
+            border: 2px solid #fff;
+
+            color: #fff;
+
+        }
+
+
+
+        .btn-outline-dark:hover {
+
+            background-color: #fff;
+
+            color: var(--color-dark);
+
+        }
+
+
+
+        .section-padding {
+
+            padding: 90px 0;
+
+        }
+
+
+
+        .bg-grey {
+
+            background-color: var(--color-grey-bg);
+
+            border-top: 1px solid #e5e7eb;
+
+            border-bottom: 1px solid #e5e7eb;
+
+        }
+
+
+
+        .bg-pattern {
+
+            background-color: var(--color-light);
+
+            background-image:
+
+                linear-gradient(rgba(20, 24, 32, 0.03) 1px, transparent 1px),
+
+                linear-gradient(90deg, rgba(20, 24, 32, 0.03) 1px, transparent 1px);
+
+            background-size: 40px 40px;
+
+        }
+
+
+
+        .text-center { text-align: center; }
+
+
+
+        /* --- Sticky Navigation --- */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background-color: rgba(255, 255, 255, 0.98);
+
+            height: var(--header-height);
+
+            display: flex;
+
+            align-items: center;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+            backdrop-filter: blur(5px);
+
+            border-bottom: 3px solid var(--color-dark);
+
+        }
+
+
+
+        .nav-container {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            width: 90%;
+
+            max-width: var(--container-width);
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .logo {
+
+            font-size: 1.6rem;
+
+            font-weight: 900;
+
+            color: var(--color-dark);
+
+            letter-spacing: -0.04em;
+
+            text-transform: uppercase;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+
+        .logo span {
+
+            color: var(--color-accent-hover);
+
+            margin-left: 2px;
+
+        }
+
+
+
+        .logo-sub {
+
+            font-size: 0.7rem;
+
+            color: var(--color-text-light);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.12em;
+
+        }
+
+
+
+        .logo-wrap {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 26px;
+
+        }
+
+
+
+        .nav-links a {
+
+            font-weight: 600;
+
+            font-size: 0.9rem;
+
+            color: var(--color-dark);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.04em;
+
+            transition: var(--transition);
+
+            position: relative;
+
+        }
+
+
+
+        .nav-links a:hover {
+
+            color: var(--color-accent-hover);
+
+        }
+
+
+
+        .nav-links a::after {
+
+            content: '';
+
+            position: absolute;
+
+            width: 0;
+
+            height: 2px;
+
+            bottom: -4px;
+
+            left: 0;
+
+            background-color: var(--color-accent);
+
+            transition: width 0.3s;
+
+        }
+
+
+
+        .nav-links a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+
+        .header-cta {
+
+            display: block;
+
+        }
+
+
+
+        .mobile-toggle {
+
+            display: none;
+
+            font-size: 1.8rem;
+
+            cursor: pointer;
+
+            color: var(--color-dark);
+
+        }
+
+
+
+        .lang-switcher {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-left: 20px;
+
+            padding-left: 20px;
+
+            border-left: 1px solid #e5e7eb;
+
+        }
+
+
+
+        .lang-switcher a {
+
+            font-weight: 600;
+
+            font-size: 0.85rem;
+
+            color: var(--color-text-light);
+
+            transition: var(--transition);
+
+        }
+
+
+
+        .lang-switcher a:hover,
+
+        .lang-switcher .lang-active {
+
+            color: var(--color-accent-hover);
+
+        }
+
+
+
+        .lang-separator {
+
+            color: var(--color-text-light);
+
+            font-size: 0.85rem;
+
+        }
+
+
+
+        /* --- HERO SECTION --- */
+
+        .hero {
+
+            position: relative;
+
+            height: 80vh;
+
+            min-height: 580px;
+
+            display: flex;
+
+            align-items: center;
+
+            color: #fff;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .hero-overlay {
+
+            position: absolute;
+
+            top: 0; left: 0; width: 100%; height: 100%;
+
+            background: linear-gradient(to right, rgba(20, 24, 32, 0.92), rgba(20, 24, 32, 0.55));
+
+            z-index: 1;
+
+        }
+
+
+
+        .hero-content {
+
+            position: relative;
+
+            max-width: 840px;
+
+            z-index: 2;
+
+            padding-left: 40px;
+
+            border-left: 5px solid var(--color-accent);
+
+        }
+
+
+
+        .hero-subtitle {
+
+            display: inline-block;
+
+            color: var(--color-accent);
+
+            font-weight: 700;
+
+            font-size: 0.9rem;
+
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: 3.6rem;
+
+            color: #fff;
+
+            margin-bottom: 1.4rem;
+
+            text-transform: uppercase;
+
+            line-height: 1.05;
+
+        }
+
+
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 2.1rem;
+
+            opacity: 0.92;
+
+            max-width: 650px;
+
+            font-weight: 300;
+
+        }
+
+
+
+        .hero-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 0.8rem;
+
+            margin-bottom: 1.8rem;
+
+            font-size: 0.85rem;
+
+        }
+
+
+
+        .hero-meta span {
+
+            padding: 6px 12px;
+
+            border-radius: 999px;
+
+            background: rgba(15, 23, 42, 0.7);
+
+            border: 1px solid rgba(249, 250, 251, 0.12);
+
+        }
+
+
+
+        /* --- ICON GRID: POSITIONING / USP'S --- */
+
+        .icon-grid-section {
+
+            background-color: var(--color-dark);
+
+            color: #fff;
+
+            padding: 80px 0;
+
+        }
+
+
+
+        .icon-grid-header {
+
+            text-align: center;
+
+            max-width: 720px;
+
+            margin: 0 auto 50px auto;
+
+        }
+
+
+
+        .icon-grid-header h2 {
+
+            color: #fff;
+
+            margin-bottom: 0.75rem;
+
+        }
+
+
+
+        .icon-grid-header p {
+
+            color: #9ca3af;
+
+        }
+
+
+
+        .icon-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 36px;
+
+            text-align: left;
+
+        }
+
+
+
+        .icon-item svg {
+
+            width: 42px;
+
+            height: 42px;
+
+            margin-bottom: 16px;
+
+            color: var(--color-accent);
+
+            display: inline-block;
+
+        }
+
+
+
+        .icon-item h4 {
+
+            color: #fff;
+
+            margin-bottom: 10px;
+
+            font-size: 1.05rem;
+
+        }
+
+
+
+        .icon-item p {
+
+            color: #9ca3af;
+
+            font-size: 0.92rem;
+
+        }
+
+
+
+        /* --- INTRO / POSITIONING SECTION --- */
+
+        .intro-section h2 {
+
+            text-align: center;
+
+        }
+
+
+
+        .intro-text {
+
+            max-width: 780px;
+
+            margin: 0.5rem auto 0 auto;
+
+            text-align: center;
+
+            color: var(--color-text-light);
+
+        }
+
+
+
+        /* --- PROJECT CARDS (REPLACING TENANT GRID) --- */
+
+        .project-section {
+
+            padding: 90px 0;
+
+            background-color: #fff;
+
+        }
+
+
+
+        .project-intro {
+
+            text-align: center;
+
+            max-width: 800px;
+
+            margin: 0 auto 60px auto;
+
+        }
+
+
+
+        .project-grid {
+
+            display: flex;
+
+            gap: 32px;
+
+            overflow-x: auto;
+
+            padding-bottom: 20px;
+
+            scroll-snap-type: x mandatory;
+
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+
+
+        .project-grid::-webkit-scrollbar {
+
+            height: 8px;
+
+        }
+
+
+
+        .project-grid::-webkit-scrollbar-track {
+
+            background: var(--color-grey-bg);
+
+            border-radius: 4px;
+
+        }
+
+
+
+        .project-grid::-webkit-scrollbar-thumb {
+
+            background: var(--color-dark-secondary);
+
+            border-radius: 4px;
+
+        }
+
+
+
+        .project-card {
+
+            background-color: #fff;
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-width: 380px;
+
+            max-width: 380px;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+
+            transition: all 0.3s ease;
+
+            scroll-snap-align: start;
+
+        }
+
+
+
+        .project-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+
+            border-color: var(--color-accent);
+
+        }
+
+
+
+        .project-img-wrapper {
+
+            height: 240px;
+
+            overflow: hidden;
+
+            border-radius: 8px 8px 0 0;
+
+        }
+
+
+
+        .project-img-wrapper img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s ease;
+
+        }
+
+
+
+        .project-card:hover .project-img-wrapper img {
+
+            transform: scale(1.08);
+
+        }
+
+
+
+        .project-content {
+
+            padding: 32px;
+
+            flex-grow: 1;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+
+        .project-tag {
+
+            display: inline-block;
+
+            background: var(--color-dark);
+
+            color: #fff;
+
+            padding: 6px 14px;
+
+            font-size: 0.7rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.08em;
+
+            margin-bottom: 12px;
+
+            border-radius: 4px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .project-location {
+
+            font-size: 0.85rem;
+
+            color: var(--color-text-light);
+
+            margin-bottom: 12px;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .project-card h3 {
+
+            font-size: 1.35rem;
+
+            margin-bottom: 14px;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .project-card p {
+
+            font-size: 0.95rem;
+
+            color: var(--color-text-light);
+
+            margin-bottom: 24px;
+
+            line-height: 1.6;
+
+            flex-grow: 1;
+
+        }
+
+
+
+        .project-metrics {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            margin-top: auto;
+
+            padding-top: 24px;
+
+            border-top: 2px solid var(--color-grey-bg);
+
+        }
+
+
+
+        .project-metric-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+
+        .project-metric-value {
+
+            font-size: 1.5rem;
+
+            font-weight: 800;
+
+            color: var(--color-accent);
+
+            min-width: 80px;
+
+            letter-spacing: -0.02em;
+
+        }
+
+
+
+        .project-metric-label {
+
+            font-size: 0.9rem;
+
+            color: var(--color-text);
+
+            font-weight: 600;
+
+        }
+
+
+
+        .project-pill {
+
+            font-size: 0.8rem;
+
+            padding: 6px 12px;
+
+            border-radius: 6px;
+
+            background: var(--color-accent-dim);
+
+            color: var(--color-dark);
+
+            font-weight: 600;
+
+            border: 1px solid rgba(244, 184, 65, 0.3);
+
+        }
+
+
+
+        .project-footer {
+
+            margin-top: 20px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #e5e7eb;
+
+            font-size: 0.85rem;
+
+            color: var(--color-text-light);
+
+            font-style: italic;
+
+        }
+
+
+
+        /* --- PROCESS / APPROACH --- */
+
+        .timeline-section h2 {
+
+            text-align: center;
+
+            margin-bottom: 12px;
+
+        }
+
+
+
+        .timeline-sub {
+
+            text-align: center;
+
+            color: var(--color-text-light);
+
+            max-width: 640px;
+
+            margin: 0 auto 55px auto;
+
+        }
+
+
+
+        .timeline {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            position: relative;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+
+        }
+
+
+
+        .timeline::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 24px;
+
+            left: 60px;
+
+            right: 60px;
+
+            height: 2px;
+
+            border-top: 2px dashed #cbd5e1;
+
+            z-index: 0;
+
+            display: block;
+
+        }
+
+
+
+        .step {
+
+            position: relative;
+
+            z-index: 1;
+
+            flex: 1;
+
+            text-align: center;
+
+            min-width: 160px;
+
+        }
+
+
+
+        .step-marker {
+
+            width: 48px;
+
+            height: 48px;
+
+            background-color: #fff;
+
+            border: 2px solid var(--color-dark-secondary);
+
+            color: var(--color-dark-secondary);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: 800;
+
+            font-size: 1.15rem;
+
+            margin: 0 auto 18px;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        .step:hover .step-marker {
+
+            background-color: var(--color-accent);
+
+            border-color: var(--color-accent);
+
+            color: var(--color-dark);
+
+        }
+
+
+
+        .step h4 {
+
+            font-size: 0.95rem;
+
+            margin-bottom: 4px;
+
+        }
+
+
+
+        .step p {
+
+            font-size: 0.86rem;
+
+            color: var(--color-text-light);
+
+        }
+
+
+
+        /* --- CONTACT --- */
+
+        .contact-wrapper {
+
+            background-color: #fff;
+
+            border: 1px solid #d1d5db;
+
+            padding: 0;
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.3fr;
+
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
+
+        }
+
+
+
+        .contact-info {
+
+            background-color: var(--color-dark);
+
+            color: #e5e7eb;
+
+            padding: 48px 42px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+        }
+
+
+
+        .contact-info h2 {
+
+            color: #fff;
+
+            margin-bottom: 14px;
+
+            font-size: 1.8rem;
+
+        }
+
+
+
+        .contact-info p {
+
+            color: #cbd5f5;
+
+            font-size: 0.92rem;
+
+        }
+
+
+
+        .contact-details {
+
+            margin-top: 30px;
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        .contact-details a {
+
+            color: #e5e7eb;
+
+            text-decoration: underline;
+
+        }
+
+
+
+        .contact-form-container {
+
+            padding: 48px 42px 42px;
+
+            background-color: #f9fafb;
+
+        }
+
+
+
+        .contact-form-title {
+
+            margin-bottom: 0.4rem;
+
+        }
+
+
+
+        .contact-form-sub {
+
+            font-size: 0.9rem;
+
+            color: var(--color-text-light);
+
+            margin-bottom: 1.5rem;
+
+        }
+
+
+
+        .form-group {
+
+            display: flex;
+
+            flex-direction: column;
+
+            margin-bottom: 16px;
+
+        }
+
+
+
+        .form-group.full-width {
+
+            grid-column: 1 / -1;
+
+        }
+
+
+
+        label {
+
+            margin-bottom: 6px;
+
+            font-size: 0.78rem;
+
+            font-weight: 700;
+
+            color: var(--color-dark);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.05em;
+
+        }
+
+
+
+        input, textarea, select {
+
+            padding: 12px 13px;
+
+            background-color: #f9fafb;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 2px;
+
+            color: var(--color-text);
+
+            font-family: inherit;
+
+            font-size: 0.95rem;
+
+            width: 100%;
+
+        }
+
+
+
+        input:focus, textarea:focus, select:focus {
+
+            outline: none;
+
+            border-color: var(--color-dark-secondary);
+
+            background-color: #fff;
+
+        }
+
+
+
+        .form-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 14px 18px;
+
+        }
+
+
+
+        .fine-print {
+
+            font-size: 0.75rem;
+
+            color: var(--color-text-light);
+
+            margin-top: 0.4rem;
+
+        }
+
+
+
+        /* --- FOOTER --- */
+
+        footer {
+
+            background-color: #0b0e13;
+
+            color: #6b7280;
+
+            padding: 50px 0 40px;
+
+            text-align: center;
+
+            font-size: 0.85rem;
+
+            border-top: 1px solid #1f2933;
+
+        }
+
+
+
+        footer a {
+
+            color: #9ca3af;
+
+            text-decoration: underline;
+
+        }
+
+
+
+        /* --- RESPONSIVE --- */
+
+        @media (max-width: 900px) {
+
+            h1 { font-size: 2.5rem; }
+
+            h2 { font-size: 2.1rem; }
+
+
+
+            .header-cta { display: none; }
+
+
+
+            .nav-links {
+
+                position: absolute;
+
+                top: var(--header-height);
+
+                left: 0;
+
+                right: 0;
+
+                background-color: #fff;
+
+                flex-direction: column;
+
+                padding: 24px 30px 28px;
+
+                gap: 18px;
+
+                border-bottom: 3px solid var(--color-dark);
+
+                display: none;
+
+                text-align: center;
+
+                box-shadow: 0 14px 22px rgba(0,0,0,0.12);
+
+            }
+
+
+
+            .nav-links.active {
+
+                display: flex;
+
+            }
+
+
+
+            .mobile-toggle {
+
+                display: block;
+
+            }
+
+
+
+            .hero {
+
+                height: auto;
+
+                min-height: 500px;
+
+            }
+
+
+
+            .hero-content {
+
+                padding-left: 20px;
+
+                padding-right: 20px;
+
+            }
+
+
+
+            .contact-wrapper {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+            .contact-info,
+
+            .contact-form-container {
+
+                padding: 36px 24px;
+
+            }
+
+
+
+            .timeline::before {
+
+                display: none;
+
+            }
+
+
+
+            .timeline {
+
+                flex-direction: column;
+
+                gap: 26px;
+
+            }
+
+
+
+            .step {
+
+                display: flex;
+
+                align-items: flex-start;
+
+                text-align: left;
+
+            }
+
+
+
+            .step-marker {
+
+                margin: 0 16px 0 0;
+
+                min-width: 48px;
+
+            }
+
+
+
+            .form-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+            .project-grid {
+
+                gap: 20px;
+
+            }
+
+
+
+            .project-card {
+
+                min-width: 320px;
+
+                max-width: 320px;
+
+            }
+
+
+
+            .project-metric-value {
+
+                font-size: 1.3rem;
+
+                min-width: 70px;
+
+            }
+
+
+
+            .lang-switcher {
+
+                margin-left: 0;
+
+                padding-left: 0;
+
+                border-left: none;
+
+                border-top: 1px solid #e5e7eb;
+
+                padding-top: 18px;
+
+                margin-top: 18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- Sticky Header -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <div class="logo-wrap">
+
+                <a href="#top" class="logo">TULIP<span>.</span></a>
+
+                <div class="logo-sub">Asset Management · Tschechische Republik</div>
+
+            </div>
+
+
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#about" onclick="closeMenu()">Über uns</a>
+
+                <a href="#services" onclick="closeMenu()">Leistungen</a>
+
+                <a href="#projects" onclick="closeMenu()">Projekte</a>
+
+                <a href="#process" onclick="closeMenu()">Vorgehen</a>
+
+                <a href="#contact" onclick="closeMenu()">Kontakt</a>
+
+                <div class="lang-switcher">
+
+                    <a href="../en/index.html">EN</a>
+
+                    <span class="lang-separator">|</span>
+
+                    <a href="index.html" class="lang-active">DE</a>
+
+                    <span class="lang-separator">|</span>
+
+                    <a href="../cz/index.html">CZ</a>
+
+                </div>
+
+            </nav>
+
+
+
+            <div class="header-cta">
+
+                <a href="#contact" class="btn">Rückruf anfordern</a>
+
+            </div>
+
+
+
+            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Hero -->
+
+    <section class="hero" id="top">
+
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="hero-subtitle">Asset Manager & Co-Investor · Gewerbliche Immobilien Tschechien</span>
+
+                <h1>Lokales Asset Management für institutionelle Eigentümer.</h1>
+
+                <p>
+
+                    Tulip Holding s.r.o. ist Ihr Asset Manager vor Ort und Co-Investor in der Tschechischen Republik –
+
+                    fokussiert auf Ertrag, Risiko und langfristigen Wert für professionelle Eigentümer gewerblicher Immobilien.
+
+                </p>
+
+                <div class="hero-meta">
+
+                    <span>Asset Management &amp; Leasing</span>
+
+                    <span>Transaktionen &amp; Strukturierung</span>
+
+                    <span>Prag · Brünn · regionale Städte</span>
+
+                </div>
+
+                <a href="#contact" class="btn btn-outline-dark">Ihre Assets besprechen</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Intro / Positioning -->
+
+    <section id="about" class="section-padding intro-section bg-grey">
+
+        <div class="container">
+
+            <h2>Lokaler Partner für tschechische Immobilien</h2>
+
+            <p class="intro-text">
+
+                Tulip Holding s.r.o. verbindet praxisorientiertes Asset Management mit einer Investorenmentalität.
+
+                Wir verwalten und optimieren gewerbliche Immobilien in der Tschechischen Republik für institutionelle und professionelle Eigentümer –
+
+                und investieren selektiv mit, wo Interessen übereinstimmen.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Icon Grid: What makes Tulip different -->
+
+    <section class="icon-grid-section">
+
+        <div class="container">
+
+            <div class="icon-grid-header">
+
+                <h2>Asset Manager zuerst, Investor von Grund auf</h2>
+
+                <p>
+
+                    Wir sind kein passiver Immobilienverwalter. Tulip agiert als Asset Manager mit klaren Wertschöpfungsplänen
+
+                    und, wo angemessen, als Co-Investor neben dem Eigentümer.
+
+                </p>
+
+            </div>
+
+            <div class="icon-grid">
+
+                <div class="icon-item">
+
+                    <!-- Asset Management Icon -->
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                        <polyline points="3 17 9 11 13 15 21 7"></polyline>
+
+                        <polyline points="14 7 21 7 21 14"></polyline>
+
+                    </svg>
+
+                    <h4>Institutionelles Asset Management</h4>
+
+                    <p>
+
+                        Mietoptimierung, Leasing-Restrukturierung, Leerstandsreduzierung und Cashflow-Kontrolle – berichtet in der Art, die institutionelle Investoren erwarten.
+
+                    </p>
+
+                </div>
+
+                <div class="icon-item">
+
+                    <!-- Investor Icon -->
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                        <rect x="3" y="12" width="4" height="8"></rect>
+
+                        <rect x="10" y="8" width="4" height="12"></rect>
+
+                        <rect x="17" y="4" width="4" height="16"></rect>
+
+                        <path d="M3 10l7-6 4 4 7-6"></path>
+
+                    </svg>
+
+                    <h4>Ausgerichteter Co-Investor</h4>
+
+                    <p>
+
+                        In ausgewählten Situationen investiert Tulip mit, richtet Interessen aus und unterstützt CAPEX, Repositionierung und zukünftigen Exit.
+
+                    </p>
+
+                </div>
+
+                <div class="icon-item">
+
+                    <!-- Local Market Icon -->
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                        <circle cx="12" cy="12" r="10"></circle>
+
+                        <path d="M2 12h20"></path>
+
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+
+                    </svg>
+
+                    <h4>Fokussiert auf Tschechische Republik</h4>
+
+                    <p>
+
+                        Tiefe Vertrautheit mit tschechischen Mietern, rechtlichen und steuerlichen Rahmenbedingungen, Gemeinden und Transaktionspraxis.
+
+                    </p>
+
+                </div>
+
+                <div class="icon-item">
+
+                    <!-- Process Icon -->
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5h20v5a2 2 0 0 1-2 2h-2"></path>
+
+                        <rect x="6" y="14" width="12" height="8"></rect>
+
+                    </svg>
+
+                    <h4>Vom Leasing bis zum Exit</h4>
+
+                    <p>
+
+                        Mandate umfassen typischerweise Ertrag, Betrieb und Kapitalentscheidungen – von Asset-Plänen bis zur Vorbereitung eines Exits.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Services (short, before projects) -->
+
+    <section id="services" class="section-padding">
+
+        <div class="container">
+
+            <h2 class="text-center">Was Tulip für Eigentümer leistet</h2>
+
+            <p class="intro-text" style="margin-bottom: 40px;">
+
+                Wir arbeiten typischerweise für institutionelle, Family Office und professionelle Eigentümer mit gewerblichen Immobilien oder Portfolios
+
+                in der Tschechischen Republik. Mandate reichen von Einzel-Asset-Stabilisierung bis hin zu vollständigem Portfolio-Asset-Management.
+
+            </p>
+
+
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Asset Management</span>
+
+                        <h3>Ertrags- & Risikomanagement</h3>
+
+                        <p>
+
+                            Wir verwalten aktiv Leasingverträge, Mieten und Mieter, um Ertrag zu stabilisieren und zu steigern, während wir Risiken kontrollieren.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <span class="project-pill">Miete &amp; Indexierung</span>
+
+                            <span class="project-pill">Leasing-Restrukturierung</span>
+
+                            <span class="project-pill">Rückstände &amp; Cashflow</span>
+
+                            <span class="project-pill">CAPEX &amp; Instandhaltung</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="project-card">
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Leasing</span>
+
+                        <h3>Leerstand & Mieterstruktur</h3>
+
+                        <p>
+
+                            Wir finden neue Mieter, verwalten Ein- und Auszüge und arbeiten an einer nachhaltigen Mieterstruktur, die zur Immobilie passt.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <span class="project-pill">Leerstandsreduzierung</span>
+
+                            <span class="project-pill">Zielgerichtetes Marketing</span>
+
+                            <span class="project-pill">Mieterzufriedenheit</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="project-card">
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Transaktionen</span>
+
+                        <h3>Vorbereitung & Strukturierung</h3>
+
+                        <p>
+
+                            Für Eigentümer, die einen Exit oder eine Akquisition planen, bereitet Tulip die Immobilie vor, koordiniert Berater und strukturiert
+
+                            Eigentumsverhältnisse für ausländische Investoren.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <span class="project-pill">Verkäufervorbereitung</span>
+
+                            <span class="project-pill">Data Room &amp; Due Diligence</span>
+
+                            <span class="project-pill">Recht &amp; Steuern (CZ)</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="project-card">
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Entwicklung</span>
+
+                        <h3>Nutzungsänderung & Repositionierung</h3>
+
+                        <p>
+
+                            Wir unterstützen Nutzungsänderungen, leichte Umstrukturierungen und Konzeptarbeit, um latente Werte in tschechischen Immobilien zu erschließen.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <span class="project-pill">Nutzungsänderung &amp; Genehmigungen</span>
+
+                            <span class="project-pill">Layout-Optimierung</span>
+
+                            <span class="project-pill">Businesspläne</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Project Cards / Case Studies -->
+
+    <section id="projects" class="project-section">
+
+        <div class="container">
+
+            <div class="project-intro">
+
+                <h2>Ausgewählte Projekte & Wertschöpfung</h2>
+
+                <p>
+
+                    Die folgenden Projekte zeigen, wie Tulip als Asset Manager und in einigen Fällen als Co-Investor agiert.
+
+                    Zahlen sind anonymisiert, spiegeln aber echte Mandate wider.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="project-grid">
+
+                <!-- Project 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-img-wrapper">
+
+                        <img src="../images/purkynova.jpg" alt="Urban retail & office, Prague">
+
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Asset Management & Exit</span>
+
+                        <div class="project-location">Städtisches Einzelhandel & Büro · Prag</div>
+
+                        <h3>Von fragmentierten Leasingverträgen zu stabilisiertem Ertrag</h3>
+
+                        <p>
+
+                            Tulip fungierte als Eigentümer und Asset Manager für eine gemischte Einzelhandels-/Büroimmobilie in einem innerstädtischen Viertel.
+
+                            Leasingverträge waren fragmentiert, Mieten unter Marktniveau und Zahlungsdisziplin schwach.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">+18%</span>
+
+                                <span class="project-metric-label">Nettomietsteigerung</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">98%</span>
+
+                                <span class="project-metric-label">Auslastung (von 86%)</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">&lt;10</span>
+
+                                <span class="project-metric-label">Zahlungsverzug in Tagen (von 45)</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-footer">
+
+                            Ergebnis: stabiler Cashflow und attraktiver Verkauf an einen langfristigen institutionellen Investor.
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Project 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-img-wrapper">
+
+                        <img src="../images/project-brno-industrial.jpg" alt="Light industrial estate, Brno region">
+
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Mandatierte Asset-Verwaltung</span>
+
+                        <div class="project-location">Leichtindustrie & Lager · Region Brünn</div>
+
+                        <h3>Repositionierung eines alternden Bestands</h3>
+
+                        <p>
+
+                            Für einen internationalen Eigentümer erstellte Tulip einen CAPEX-Plan, verpackte Einheiten für KMU-Nachfrage neu und führte eine gezielte Leasing-Kampagne
+
+                            durch, um die Auslastung wieder aufzubauen.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">9%</span>
+
+                                <span class="project-metric-label">Leerstand (von 32%)</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">+11%</span>
+
+                                <span class="project-metric-label">Durchschnittliche Mietsteigerung</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">✓</span>
+
+                                <span class="project-metric-label">Verbesserte Mieterstruktur</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-footer">
+
+                            Ergebnis: widerstandsfähigeres Einkommen und klarer 3–5-Jahres-Geschäftsplan.
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Project 3 -->
+
+                <article class="project-card">
+
+                    <div class="project-img-wrapper">
+
+                        <img src="../images/project-regional-retail.jpg" alt="Retail park, regional city">
+
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Co-Investment & Leasing</span>
+
+                        <div class="project-location">Einzelhandelspark · regionale tschechische Stadt</div>
+
+                        <h3>Leasing und Repositionierung mit Tulip als Co-Investor</h3>
+
+                        <p>
+
+                            Tulip investierte gemeinsam in einen teilweise leerstehenden Einzelhandelspark und übernahm Leasing und Asset Management, fokussiert
+
+                            auf Ankermieter und Verbesserung der Mieterstruktur.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">✓</span>
+
+                                <span class="project-metric-label">Ankermieter gesichert</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">50%</span>
+
+                                <span class="project-metric-label">Leerstandsreduzierung</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">↑</span>
+
+                                <span class="project-metric-label">Besucherfrequenz &amp; Umsatz gestiegen</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-footer">
+
+                            Ergebnis: höhere Bewertung und verbesserte Refinanzierungsoptionen.
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Project 4 -->
+
+                <article class="project-card">
+
+                    <div class="project-img-wrapper">
+
+                        <img src="../images/bohunice.jpg" alt="Office building structuring">
+
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-tag">Strukturierung & Beratung</span>
+
+                        <div class="project-location">Büro / gemischte Nutzung · Tschechische Republik</div>
+
+                        <h3>Strukturierung tschechischer Beteiligungen für ausländischen Eigentümer</h3>
+
+                        <p>
+
+                            Für einen ausländischen Investor mit mehreren tschechischen SPVs unterstützte Tulip Konsolidierung, Asset-Pläne und
+
+                            rechtliche / steuerliche Strukturierung, abgestimmt auf lokale Praxis.
+
+                        </p>
+
+                        <div class="project-metrics">
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">✓</span>
+
+                                <span class="project-metric-label">Klare Asset-Pläne</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">✓</span>
+
+                                <span class="project-metric-label">Vereinfachte Struktur</span>
+
+                            </div>
+
+                            <div class="project-metric-item">
+
+                                <span class="project-metric-value">✓</span>
+
+                                <span class="project-metric-label">Verbesserte Governance</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-footer">
+
+                            Ergebnis: bessere Kontrolle und Bereitschaft für zukünftige Akquisition oder Exit.
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Approach / Process -->
+
+    <section id="process" class="section-padding bg-grey timeline-section">
+
+        <div class="container">
+
+            <h2>Wie ein typisches Mandat beginnt</h2>
+
+            <p class="timeline-sub">
+
+                Jede Immobilie ist anders. Die folgenden Schritte beschreiben, wie Tulip sich typischerweise mit Eigentümern engagiert und einen Asset-Management-Plan erstellt.
+
+            </p>
+
+
+
+            <div class="timeline">
+
+                <div class="step">
+
+                    <div class="step-marker">1</div>
+
+                    <div>
+
+                        <h4>Erstgespräch</h4>
+
+                        <p>Kurzes Gespräch, um Ihre Immobilien, Herausforderungen und Ziele zu verstehen.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-marker">2</div>
+
+                    <div>
+
+                        <h4>Daten & Analyse</h4>
+
+                        <p>Überblick über Mietrollen, Leasingverträge, Auslastung, CAPEX und Marktposition.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-marker">3</div>
+
+                    <div>
+
+                        <h4>Asset-Plan</h4>
+
+                        <p>Entwurf eines Asset-Management-Plans mit Prioritäten für Ertrag, Leasing, CAPEX und Risiko.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-marker">4</div>
+
+                    <div>
+
+                        <h4>Mandat & Umsetzung</h4>
+
+                        <p>Klares Mandat, Gebührenstruktur und kontinuierliche Umsetzung vor Ort in der Tschechischen Republik.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Contact -->
+
+    <section id="contact" class="section-padding bg-pattern">
+
+        <div class="container">
+
+            <div class="contact-wrapper">
+
+                <div class="contact-info">
+
+                    <div>
+
+                        <h2>Besprechen Sie Ihre tschechischen Immobilien</h2>
+
+                        <p>
+
+                            Wenn Sie gewerbliche Immobilien in der Tschechischen Republik besitzen und einen lokalen Asset-Management-Partner in Betracht ziehen,
+
+                            steht Tulip für ein vertrauliches, unverbindliches Gespräch zur Verfügung.
+
+                        </p>
+
+                    </div>
+
+                    <div class="contact-details">
+
+                        <p>
+
+                            <strong>Tulip Holding s.r.o.</strong><br>
+
+                            Example Street 1<br>
+
+                            110 00 Prague · Czech Republic
+
+                        </p>
+
+                        <p style="margin-top: 12px;">
+
+                            E: <a href="mailto:info@tulipholding.cz">info@tulipholding.cz</a><br>
+
+                            T: +420 000 000 000
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-form-container">
+
+                    <h3 class="contact-form-title">Rückruf anfordern oder Nachricht senden</h3>
+
+                    <p class="contact-form-sub">
+
+                        Teilen Sie einige Details zu Ihrer(n) Immobilie(n) mit und wir melden uns mit einem vorgeschlagenen Termin und nächsten Schritten zurück.
+
+                    </p>
+
+
+
+                    <!-- TODO: Insert form action URL from static form service (e.g. Formspree) -->
+
+                    <form class="contact-form" method="post" action="#">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="name">Name*</label>
+
+                                <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="company">Unternehmen / Investorentyp</label>
+
+                                <input type="text" id="company" name="company" placeholder="Institution, Family Office, Fonds...">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="email">Email*</label>
+
+                                <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="phone">Phone</label>
+
+                                <input type="tel" id="phone" name="phone" placeholder="+420 ...">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="location">Immobilienstandort(e) in CZ</label>
+
+                                <input type="text" id="location" name="location" placeholder="Prag, Brünn, regionale Städte...">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="size">Approx. asset size</label>
+
+                                <select id="size" name="size">
+
+                                    <option value="">Select...</option>
+
+                                    <option>&lt; EUR 5m</option>
+
+                                    <option>EUR 5–20m</option>
+
+                                    <option>EUR 20–50m</option>
+
+                                    <option>&gt; EUR 50m</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="form-group full-width">
+
+                                <label for="message">Kurze Beschreibung Ihrer Situation*</label>
+
+                                <textarea id="message" name="message" rows="4" required placeholder="Aktuelle Herausforderungen, Art der Immobilien, Fragen..."></textarea>
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-group" style="margin-top: 10px;">
+
+                            <button type="submit" class="btn">Nachricht senden</button>
+
+                            <div class="fine-print">
+
+                                Durch das Absenden dieses Formulars stimmen Sie zu, dass Tulip Holding Sie zu Ihrer Anfrage kontaktieren darf.
+
+                                Daten werden ausschließlich zur Beantwortung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben, außer wo erforderlich.
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+
+                &copy; 2024 Tulip Holding s.r.o. · Alle Rechte vorbehalten.
+
+                &nbsp;|&nbsp;
+
+                <a href="#">Impressum</a>
+
+                &nbsp;|&nbsp;
+
+                <a href="#">Datenschutz</a>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        function toggleMenu() {
+
+            const nav = document.getElementById('navLinks');
+
+            nav.classList.toggle('active');
+
+        }
+
+
+
+        function closeMenu() {
+
+            const nav = document.getElementById('navLinks');
+
+            if (nav.classList.contains('active')) {
+
+                nav.classList.remove('active');
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
