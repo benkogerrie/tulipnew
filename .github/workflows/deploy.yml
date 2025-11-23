@@ -30,10 +30,12 @@ jobs:
           mkdir -p dist
           cp index.html dist/
           cp favicon.svg dist/ 2>/dev/null || true
+          cp CNAME dist/ 2>/dev/null || true
           cp -r images dist/ 2>/dev/null || true
           cp -r en dist/ 2>/dev/null || true
           cp -r de dist/ 2>/dev/null || true
           cp -r cz dist/ 2>/dev/null || true
+          cp -r oud dist/ 2>/dev/null || true
           cp .nojekyll dist/ 2>/dev/null || true
       
       - name: Upload artifact
