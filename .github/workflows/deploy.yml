@@ -40,8 +40,10 @@ jobs:
           # Debug: verify images are copied
           echo "Checking images in dist:"
           ls -lh dist/images/ || echo "Images directory not found"
-          test -f dist/images/project-brno-industrial.jpg && echo "✓ project-brno-industrial.jpg exists" || echo "✗ project-brno-industrial.jpg missing"
+          test -f dist/images/image-2.jpg && echo "✓ image-2.jpg exists" || echo "✗ image-2.jpg missing"
+          test -f dist/images/assets.png && echo "✓ assets.png exists" || echo "✗ assets.png missing"
           test -f dist/images/project-regional-retail.png && echo "✓ project-regional-retail.png exists" || echo "✗ project-regional-retail.png missing"
+          test -f dist/images/bohunice.jpg && echo "✓ bohunice.jpg exists" || echo "✗ bohunice.jpg missing"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
