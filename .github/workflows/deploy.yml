@@ -37,6 +37,11 @@ jobs:
           cp -r cz dist/ 2>/dev/null || true
           cp -r oud dist/ 2>/dev/null || true
           cp .nojekyll dist/ 2>/dev/null || true
+          # Debug: verify images are copied
+          echo "Checking images in dist:"
+          ls -lh dist/images/ || echo "Images directory not found"
+          test -f dist/images/project-brno-industrial.jpg && echo "✓ project-brno-industrial.jpg exists" || echo "✗ project-brno-industrial.jpg missing"
+          test -f dist/images/project-regional-retail.png && echo "✓ project-regional-retail.png exists" || echo "✗ project-regional-retail.png missing"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
