@@ -2266,7 +2266,7 @@
 
                     <div class="project-img-wrapper">
 
-                        <img src="./images/project-regional-retail.jpg" alt="Retail park, regional city">
+                        <img src="./images/project-regional-retail.png" alt="Retail park, regional city">
 
                     </div>
 
@@ -2508,11 +2508,13 @@
 
                         <p>
 
-                            <strong>Tulip Holding s.r.o.</strong><br>
+                            <strong>TULIP holding, s.r.o.</strong><br>
 
-                            Example Street 1<br>
+                            Rejchova 5000/20<br>
 
-                            110 00 Prague · Czech Republic
+                            58601 Jihlava · Czech Republic<br>
+
+                            IČ: 27751155
 
                         </p>
 
@@ -2520,7 +2522,7 @@
 
                             E: <a href="mailto:info@tulipholding.cz">info@tulipholding.cz</a><br>
 
-                            T: +420 000 000 000
+                            T: +420 774 747 475
 
                         </p>
 
@@ -2540,9 +2542,12 @@
 
 
 
-                    <!-- TODO: Insert form action URL from static form service (e.g. Formspree) -->
-
-                    <form class="contact-form" method="post" action="#">
+                    <form class="contact-form" method="POST" action="https://api.web3forms.com/submit" id="contact-form">
+                        
+                        <input type="hidden" name="access_key" value="ba0595f8-7006-41ee-b10f-3e73654f5eca">
+                        <input type="hidden" name="subject" value="Contact Request from Tulip Holding Website">
+                        <input type="hidden" name="from_name" value="Tulip Holding Contact Form">
+                        <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                         <div class="form-grid">
 
@@ -2618,7 +2623,9 @@
 
                         <div class="form-group" style="margin-top: 10px;">
 
-                            <button type="submit" class="btn">Send message</button>
+                            <button type="submit" class="btn" id="submit-btn">Send message</button>
+                            
+                            <div id="form-result" style="margin-top: 12px; font-size: 0.9rem; display: none;"></div>
 
                             <div class="fine-print">
 
@@ -2691,6 +2698,80 @@
             }
 
         }
+
+
+
+        // Web3Forms submission handler
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+
+            const resultDiv = document.getElementById('form-result');
+
+            const formData = new FormData(this);
+
+            
+
+            submitBtn.disabled = true;
+
+            submitBtn.textContent = 'Sending...';
+
+            resultDiv.style.display = 'none';
+
+            
+
+            fetch('https://api.web3forms.com/submit', {
+
+                method: 'POST',
+
+                body: formData
+
+            })
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                if (data.success) {
+
+                    resultDiv.style.display = 'block';
+
+                    resultDiv.style.color = '#10b981';
+
+                    resultDiv.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
+
+                    document.getElementById('contact-form').reset();
+
+                } else {
+
+                    throw new Error(data.message || 'Something went wrong');
+
+                }
+
+            })
+
+            .catch(error => {
+
+                resultDiv.style.display = 'block';
+
+                resultDiv.style.color = '#ef4444';
+
+                resultDiv.textContent = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+
+            })
+
+            .finally(() => {
+
+                submitBtn.disabled = false;
+
+                submitBtn.textContent = 'Send message';
+
+            });
+
+        });
 
     </script>
 

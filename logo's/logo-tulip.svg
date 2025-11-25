@@ -1,0 +1,12 @@
+<svg width="600" height="240" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="240" fill="white"/>
+  
+  <!-- TULIP Logo Text -->
+  <text x="0" y="100" font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="900" fill="#141820" letter-spacing="-3.84">
+    TULIP<tspan fill="#e0a837">.</tspan>
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="0" y="170" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#6b7280" letter-spacing="3.36">Asset Management · Czech Republic</text>
+</svg>

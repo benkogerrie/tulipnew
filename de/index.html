@@ -2272,7 +2272,7 @@
 
                     <div class="project-img-wrapper">
 
-                        <img src="../images/project-regional-retail.jpg" alt="Retail park, regional city">
+                        <img src="../images/project-regional-retail.png" alt="Retail park, regional city">
 
                     </div>
 
@@ -2514,11 +2514,13 @@
 
                         <p>
 
-                            <strong>Tulip Holding s.r.o.</strong><br>
+                            <strong>TULIP holding, s.r.o.</strong><br>
 
-                            Example Street 1<br>
+                            Rejchova 5000/20<br>
 
-                            110 00 Prague · Czech Republic
+                            58601 Jihlava · Tschechien<br>
+
+                            IČ: 27751155
 
                         </p>
 
@@ -2526,7 +2528,7 @@
 
                             E: <a href="mailto:info@tulipholding.cz">info@tulipholding.cz</a><br>
 
-                            T: +420 000 000 000
+                            T: +420 774 747 475
 
                         </p>
 
@@ -2548,7 +2550,12 @@
 
                     <!-- TODO: Insert form action URL from static form service (e.g. Formspree) -->
 
-                    <form class="contact-form" method="post" action="#">
+                    <form class="contact-form" method="POST" action="https://api.web3forms.com/submit" id="contact-form">
+                        
+                        <input type="hidden" name="access_key" value="ba0595f8-7006-41ee-b10f-3e73654f5eca">
+                        <input type="hidden" name="subject" value="Contact Request from Tulip Holding Website">
+                        <input type="hidden" name="from_name" value="Tulip Holding Contact Form">
+                        <input type="checkbox" name="botcheck" id="" style="display: none;">
 
                         <div class="form-grid">
 
@@ -2624,7 +2631,9 @@
 
                         <div class="form-group" style="margin-top: 10px;">
 
-                            <button type="submit" class="btn">Nachricht senden</button>
+                            <button type="submit" class="btn" id="submit-btn">Nachricht senden</button>
+                            
+                            <div id="form-result" style="margin-top: 12px; font-size: 0.9rem; display: none;"></div>
 
                             <div class="fine-print">
 
@@ -2697,6 +2706,80 @@
             }
 
         }
+
+
+
+        // Web3Forms submission handler
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submit-btn');
+
+            const resultDiv = document.getElementById('form-result');
+
+            const formData = new FormData(this);
+
+            
+
+            submitBtn.disabled = true;
+
+            submitBtn.textContent = 'Wird gesendet...';
+
+            resultDiv.style.display = 'none';
+
+            
+
+            fetch('https://api.web3forms.com/submit', {
+
+                method: 'POST',
+
+                body: formData
+
+            })
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                if (data.success) {
+
+                    resultDiv.style.display = 'block';
+
+                    resultDiv.style.color = '#10b981';
+
+                    resultDiv.textContent = 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen melden.';
+
+                    document.getElementById('contact-form').reset();
+
+                } else {
+
+                    throw new Error(data.message || 'Etwas ist schief gelaufen');
+
+                }
+
+            })
+
+            .catch(error => {
+
+                resultDiv.style.display = 'block';
+
+                resultDiv.style.color = '#ef4444';
+
+                resultDiv.textContent = 'Entschuldigung, beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.';
+
+            })
+
+            .finally(() => {
+
+                submitBtn.disabled = false;
+
+                submitBtn.textContent = 'Nachricht senden';
+
+            });
+
+        });
 
     </script>
 
