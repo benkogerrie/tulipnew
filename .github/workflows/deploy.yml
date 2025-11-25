@@ -38,12 +38,22 @@ jobs:
           cp -r oud dist/ 2>/dev/null || true
           cp .nojekyll dist/ 2>/dev/null || true
           # Debug: verify images are copied
-          echo "Checking images in dist:"
-          ls -lh dist/images/ || echo "Images directory not found"
+          echo "=== Checking source images directory ==="
+          ls -lh images/ || echo "Source images directory not found"
+          echo ""
+          echo "=== Checking dist/images directory ==="
+          ls -lh dist/images/ || echo "Dist images directory not found"
+          echo ""
+          echo "=== Verifying specific image files ==="
           test -f dist/images/image-2.jpg && echo "✓ image-2.jpg exists" || echo "✗ image-2.jpg missing"
           test -f dist/images/assets.png && echo "✓ assets.png exists" || echo "✗ assets.png missing"
           test -f dist/images/project-regional-retail.png && echo "✓ project-regional-retail.png exists" || echo "✗ project-regional-retail.png missing"
           test -f dist/images/bohunice.jpg && echo "✓ bohunice.jpg exists" || echo "✗ bohunice.jpg missing"
+          echo ""
+          echo "=== Checking HTML files for image references ==="
+          grep -r "image-2.jpg" dist/en/index.html dist/de/index.html dist/cz/index.html dist/index.html 2>/dev/null | head -5 || echo "No image-2.jpg references found"
+          grep -r "assets.png" dist/en/index.html dist/de/index.html dist/cz/index.html dist/index.html 2>/dev/null | head -5 || echo "No assets.png references found"
+          grep -r "purkynova" dist/en/index.html dist/de/index.html dist/cz/index.html dist/index.html 2>/dev/null | head -5 || echo "No purkynova references found (good!)"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
