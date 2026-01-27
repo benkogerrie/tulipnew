@@ -1,0 +1,19 @@
+# Cache headers voor Cloudflare
+# Deze headers helpen om cache-problemen te voorkomen
+
+/images/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.jpg
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.png
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+
+
+
+

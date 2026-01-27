@@ -28,32 +28,28 @@ jobs:
       - name: Prepare deployment
         run: |
           mkdir -p dist
+          # Copy old website to root
           cp index.html dist/
-          cp favicon.svg dist/ 2>/dev/null || true
-          cp CNAME dist/ 2>/dev/null || true
           cp -r images dist/ 2>/dev/null || true
-          cp -r en dist/ 2>/dev/null || true
-          cp -r de dist/ 2>/dev/null || true
-          cp -r cz dist/ 2>/dev/null || true
-          cp -r oud dist/ 2>/dev/null || true
+          # Copy new website to /new
+          cp -r new dist/ 2>/dev/null || true
+          # Copy other files
+          cp CNAME dist/ 2>/dev/null || true
           cp .nojekyll dist/ 2>/dev/null || true
-          # Debug: verify images are copied
-          echo "=== Checking source images directory ==="
-          ls -lh images/ || echo "Source images directory not found"
+          cp _headers dist/ 2>/dev/null || true
+          # Debug: verify structure
+          echo "=== Checking root files ==="
+          test -f dist/index.html && echo "✓ Root index.html exists" || echo "✗ Root index.html missing"
           echo ""
-          echo "=== Checking dist/images directory ==="
-          ls -lh dist/images/ || echo "Dist images directory not found"
+          echo "=== Checking new website ==="
+          test -f dist/new/index.html && echo "✓ New website index.html exists" || echo "✗ New website index.html missing"
+          test -d dist/new/en && echo "✓ New website /en exists" || echo "✗ New website /en missing"
+          test -d dist/new/de && echo "✓ New website /de exists" || echo "✗ New website /de missing"
+          test -d dist/new/cz && echo "✓ New website /cz exists" || echo "✗ New website /cz missing"
+          test -d dist/new/images && echo "✓ New website images exists" || echo "✗ New website images missing"
           echo ""
-          echo "=== Verifying specific image files ==="
-          test -f dist/images/image-2.jpg && echo "✓ image-2.jpg exists" || echo "✗ image-2.jpg missing"
-          test -f dist/images/assets.png && echo "✓ assets.png exists" || echo "✗ assets.png missing"
-          test -f dist/images/project-regional-retail.png && echo "✓ project-regional-retail.png exists" || echo "✗ project-regional-retail.png missing"
-          test -f dist/images/bohunice.jpg && echo "✓ bohunice.jpg exists" || echo "✗ bohunice.jpg missing"
-          echo ""
-          echo "=== Checking HTML files for image references ==="
-          grep -r "image-2.jpg" dist/en/index.html dist/de/index.html dist/cz/index.html dist/index.html 2>/dev/null | head -5 || echo "No image-2.jpg references found"
-          grep -r "assets.png" dist/en/index.html dist/de/index.html dist/cz/index.html dist/index.html 2>/dev/null | head -5 || echo "No assets.png references found"
-          grep -r "purkynova" dist/en/index.html dist/de/index.html dist/cz/index.html dist/index.html 2>/dev/null | head -5 || echo "No purkynova references found (good!)"
+          echo "=== Checking old website images ==="
+          test -d dist/images && echo "✓ Old website images exists" || echo "✗ Old website images missing"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

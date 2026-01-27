@@ -43,7 +43,17 @@ Als je de oude website wilt vervangen:
 
 ## Project structuur
 
-- `/en` - Engelse versie
-- `/de` - Duitse versie  
-- `/cz` - Tsjechische versie
-- `/assets/css` - Stylesheets
+**Root (oude website):**
+- `index.html` - Oude website homepage
+- `images/` - Oude website afbeeldingen
+
+**Nieuwe website (`/new`):**
+- `/new/index.html` - Nieuwe website homepage (EN)
+- `/new/en/` - Engelse versie
+- `/new/de/` - Duitse versie  
+- `/new/cz/` - Tsjechische versie
+- `/new/images/` - Nieuwe website afbeeldingen
+
+**URLs:**
+- Oude website: `tulipholding.cz` (root)
+- Nieuwe website: `tulipholding.cz/new`
